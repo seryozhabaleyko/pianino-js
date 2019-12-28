@@ -1,0 +1,55 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #607D8B;
+}
+
+.piano {
+    display: flex;
+}
+
+.key {
+    height: calc(var(--width) * 4);
+    width: var(--width);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-weight: bold
+}
+
+.white {
+    --width: 100px;
+    background-color: white;
+    color: black;
+}
+
+.white.active {
+    background-color: #CCC;
+}
+
+.black {
+    --width: 60px;
+    background-color: black;
+    color: white;
+    margin-left: calc(var(--width) / -2);
+    margin-right: calc(var(--width) / -2);
+    z-index: 2;
+    box-shadow: 0px 3px 5px #666;
+}
+
+.black.active {
+    background-color: #333;
+}
